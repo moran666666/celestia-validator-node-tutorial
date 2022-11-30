@@ -66,7 +66,7 @@ MONIKER="moran666666"                                               # MONIKER为
 celestia-appd init $MONIKER --chain-id mamaki                       # 会生成~/.celestia-app/配置目录
 cp ~/celestia/networks/mamaki/genesis.json ~/.celestia-app/config   # 拷贝genesis.json创世文件到~/.celestia-app/配置目录中
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')  # 获取到官方的启动节点列表
-sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml             # 修改配置文件, 将获官方的启动节点添加到里面
+sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml             # 修改配置文件, 将官方的启动节点添加到里面
 ```
 
 ## 3. 配置节点为修剪模式（节省存储空间）<br>
@@ -92,13 +92,13 @@ cd ~                                                                            
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app                            # 复位网络区块数据, 将会清空$HOME/.celestia-app/data 目录下的区块数据文件
 SNAP_NAME=$(curl -s https://snaps.qubelabs.io/celestia/ | egrep -o ">mamaki.*tar" | tr -d ">")  # 获取将要下载的区块数据文件名称
 wget https://snaps.qubelabs.io/celestia/${SNAP_NAME}                                            # 下载50多G的快照文件, 下载视网络速率情况，可能需要很长时间
-tar -xvf ${SNAP_NAME} -C $HOME/.celestia-app/data/                                              # 解压下载的区块数据到 $HOME/.celestia-app/data/ 目录中, 解压文件大也需长一段时间
+tar -xvf ${SNAP_NAME} -C $HOME/.celestia-app/data/                                              # 解压下载的区块数据到 $HOME/.celestia-app/data/ 目录中, 解压文件大也需一段时间
 ```
 
 ## 6. 启动celestia-appd应用：
 ```shell
-tmux new -s celestia -d -n appd                                                       # 新建tmux名称为celestia后台，并在里面建appd窗口
-tmux send-keys -t celestia:appd "celestia-appd start 2>&1 | tee ~/appd.log " C-m      # 在常规命令行中, 发送命令到tmux celestia后台的appd窗口启动应用                                      
+tmux new -s celestia -d -n appd                                                       # 新建tmux名称为celestia的后台，并在里面建appd窗口
+tmux send-keys -t celestia:appd "celestia-appd start 2>&1 | tee ~/appd.log " C-m      # 在常规命令行中, 发送命令到tmux celestia后台的appd窗口中启动应用                                      
 curl -s localhost:26657/status | jq .result | jq .sync_info                           # 启动应用后就可以查看同步信息, 确保 "catching_up": false, 否则让它运行直到处于同步状态。
 ```
 tmux命令知识: 
