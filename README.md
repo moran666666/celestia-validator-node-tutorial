@@ -80,7 +80,7 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$PRUNING_KEEP_REC
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$PRUNING_INTERVAL\"/" $HOME/.celestia-app/config/app.toml
 ```
 
-## 4. 将节点配置为validator运行模式<br>
+## 4. 配置节点为validator运行模式<br>
 下面的命令主要是修改celestia配置文件config.toml里面的部分内容, 修改为 mode = "validator"
 ```shell
 sed -i.bak -e "s/^mode *=.*/mode = \"validator\"/" $HOME/.celestia-app/config/config.toml
@@ -119,7 +119,7 @@ celestia-appd keys list                        # 查看钱包地址
 ```
 到discord mamaki-faucet频道请求水：$request celestia1dxxxxxxxxxxxxxxxxxxxxxx, 在浏览器(https://celestia.explorers.guru)查询钱包是否收到水
 
-## 8. 将币质押到验证节点
+## 8. 质押token到验证节点
 ```shell
 VALIDATOR_WALLET=celestia1dxxxxxxxxxxxxxxxxxxxxxx                                                  # 验证节点的钱包地址 (用上面创建的钱包地址)
 AMOUNT=620000000utia                                                                               # 质押币数量(后面6个0是小数,这里实际上是620个币)
