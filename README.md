@@ -12,11 +12,11 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential gi
 
 ## 2. golang编译环境安装
 ```shell
-cd ~                                                                                            # 回到家目录
-wget "https://golang.org/dl/go1.18.2.linux-amd64.tar.gz"                                        # 下载go1.18.2压缩包
-sudo rm -rf /usr/local/go                                                                       # 删除原有的go
-sudo tar -C /usr/local -zxvf "go1.18.2.linux-amd64.tar.gz"                                      # 解压新的go
-rm -rf go1.18.2.linux-amd64.tar.gz                                                              # 解压完成后可删除下载的go1.18.2
+cd ~                                                           # 回到家目录
+wget "https://golang.org/dl/go1.18.2.linux-amd64.tar.gz"       # 下载go1.18.2压缩包
+sudo rm -rf /usr/local/go                                      # 删除原有的go
+sudo tar -C /usr/local -zxvf "go1.18.2.linux-amd64.tar.gz"     # 解压新的go
+rm -rf go1.18.2.linux-amd64.tar.gz                             # 解压完成后可删除下载的go1.18.2
 
 # 设置golang的环境变量
 echo "export GOROOT=/usr/local/go" |  sudo tee -a /etc/profile
