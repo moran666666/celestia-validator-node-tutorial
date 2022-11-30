@@ -103,9 +103,13 @@ curl -s localhost:26657/status | jq .result | jq .sync_info                     
 ```
 tmux命令知识: 
 ```shell
-tmux a  # 在常规命令行中输入此命令回车后，会进入tmux后台窗口
-# 进入tmux后台窗口后在里面可以切换窗格, Ctrl+b+n 切换到下一个窗格, Ctrl+b+p 切换到上一个窗格, Ctrl+b+d 退出tmux后台窗口回到常规命令行中
+tmux    # 新建默认tmux后台
+tmux a  # 在常规命令行中输入此命令回车后，会进入tmux后台
 ```
+进入tmux后台后在里面可以切换窗口:
+* 先同时按(Ctrl+b)放开后再按 n -> 切换到下一个窗口
+* 先同时按(Ctrl+b)放开后再按 p -> 切换到上一个窗口 
+* 先同时按(Ctrl+b)放开后再按 d -> 退出tmux后台回到常规命令行中
 
 ## 7. 创建节点钱包
 ```shell
