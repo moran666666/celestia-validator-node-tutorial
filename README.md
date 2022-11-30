@@ -122,7 +122,7 @@ celestia-appd keys list                        # 查看钱包地址
 ## 8. 将币质押到验证节点
 ```shell
 VALIDATOR_WALLET=celestia1dxxxxxxxxxxxxxxxxxxxxxx                                                  # 验证节点的钱包地址 (用上面创建的钱包地址)
-AMOUNT=620000000utia                                                                               # 质押币数量
+AMOUNT=620000000utia                                                                               # 质押币数量(后面6个0是小数,这里实际上是620个币)
 celestia-appd keys show $VALIDATOR_WALLET --bech val -a                                            # 返回一个操作员的钱包地址, 将其修改到下面 OP_WALLET 变量的等号后面
 OP_WALLET=celestiavaloper1dxxxxxxxxxxxxxxxxxxxxxx                                                  # 操作员钱包地址变量
 celestia-appd tx staking delegate $OP_WALLET $AMOUNT --from=$VALIDATOR_WALLET --chain-id=mamaki    # 质押多少币到操作员地址的验证节点上
