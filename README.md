@@ -144,7 +144,7 @@ celestia version                                              # 查看编译出�
 ## 2. 初始化、启动 bridge node<br>
 启动网桥：让我们通过启动 Celestia 网桥来连接需要连接的应用程序：这个网桥将连接两层网络，严格来说是数据层和共识层。使用以下命令启动网桥
 ```shell
-celestia bridge init --core.remote http://localhost:26657 --core.grpc http://localhost:26657       # 初始化bridge的配置目录文件
+celestia bridge init --core.remote http://localhost:26657 --core.grpc http://localhost:26657       # 会生成~/.celestia-bridge/配置目录
 tmux new-window -t celestia -n bridge                                                              # 在现有tmux名称为celestia的后台中新建bridge窗口
 tmux send-keys -t celestia:appd "celestia bridge start 2>&1 | tee ~/bridge.log " C-m               # 在常规命令行中, 发送命令到tmux celestia后台的bridge窗口启动bridge node
 ```
