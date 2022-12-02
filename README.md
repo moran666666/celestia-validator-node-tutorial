@@ -101,7 +101,7 @@ tmux new -s celestia -d -n appd                                                 
 tmux send-keys -t celestia:appd "celestia-appd start 2>&1 | tee ~/appd.log " C-m      # 在常规命令行中, 发送命令到tmux celestia后台的appd窗口中启动应用                                      
 curl -s localhost:26657/status | jq .result | jq .sync_info                           # 启动应用后就可以查看同步信息, 确保 "catching_up": false, 否则让它运行直到处于同步状态。
 ```
-***注意: 新手等这里查询出来同步后再往下执行！！！***<br>
+***注意: 新手等这里查询出来同步后再往下执行！！！***<br><br>
 tmux命令知识: 
 ```shell
 tmux    # 新建默认tmux后台
