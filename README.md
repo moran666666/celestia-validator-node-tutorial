@@ -7,7 +7,7 @@
 # 系统为ubuntu20.04
 sudo apt update                                                                                          # 更新源
 sudo apt upgrade -y                                                                                      # 更新最新的包
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu tee tmux -y  # 安装用到的依赖包
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu tmux -y  # 安装用到的依赖包
 ```
 
 ## 2. golang编译环境安装
