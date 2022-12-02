@@ -27,6 +27,9 @@ echo "export GOPROXY=https://goproxy.cn" |  sudo tee -a /etc/profile
 
 # 使用环境生效
 source /etc/profile
+
+# 检查golang版本, 有1.18.2版本输出表示环境设置成功
+go version
 ```
 
 ## 3. 设置进程运行的文件句柄数量
