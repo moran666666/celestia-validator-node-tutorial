@@ -107,7 +107,7 @@ curl -s localhost:26657/status | jq .result | jq .sync_info                     
 ***注意: 新手等这里查询出来同步后再往下执行！！！***<br><br>
 tmux命令知识: 
 ```shell
-一、常用命令
+一、常用命令 --- 在常规命令终端下执行
 1. tmux new -s session0 -d                                            # 新建会话session0, 并转入后台运行 ---（new 新建会话; -s 后带会话名称; -d 后台运行）
 2. tmux new-window -t session0 -n window0                             # 在后台会话session0中, 新建窗口window0 ---（new-window 新建窗口; -t 代表tmux后台会话; -n 窗口名称）跟Ctrl+b+c一样，只不过可以用此命令做自动化
 3. tmux send-keys -t session0:window0 "celestia bridge start " C-m    # 向后台会话session0的window0窗口中发送命令
@@ -115,7 +115,7 @@ tmux命令知识:
 5. tmux ls                                                            # 列出后台会话
 6. tmux a                                                             # 打开tmux后台最近的会话
 
-二、常用快捷键(默认的前缀键是Ctrl+b，即先同时按下Ctrl+b，放开后再按快捷键)
+二、常用快捷键 --- 在tmux会话窗口中执行 (默认的前缀键是Ctrl+b，即先同时按下Ctrl+b，放开后再按快捷键)
 1. Ctrl+b w                                                           # 在tmux中切换会话
 2. Ctrl+b c                                                           # 在会话中新建窗口
 3. Ctrl+b ,                                                           # 重命名窗口名称
