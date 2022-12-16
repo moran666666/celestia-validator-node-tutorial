@@ -7,7 +7,7 @@
 # 系统为ubuntu20.04
 sudo apt update                                                                                          # 更新源
 sudo apt upgrade -y                                                                                      # 更新最新的包
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu tmux -y  # 安装用到的依赖包
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu tmux -y      # 安装用到的依赖包
 ```
 
 ## 2. golang编译环境安装
@@ -191,13 +191,6 @@ celestia-appd q bank balances $VALIDATOR_WALLET --node https://rpc-mamaki.pops.o
 celestia-appd tx bank send $from_adress $to_address 10000000utia --node https://rpc-mamaki.pops.one/ --chain-id mamaki --gas auto -y  # 钱包转帐
 ```
 rpc地址:<br>
-https://rpc-mocha.pops.one
-https://api-mocha.pops.one
-https://grpc-mocha.pops.one
-
-https://rpc-mamaki.pops.one<br>
-https://rpc-1.celestia.nodes.guru<br>
-https://grpc-1.celestia.nodes.guru:10790<br>
-https://celestia-testnet-rpc.polkachu.com<br>
-https://rpc.celestia.testnet.run<br>
-https://rpc.mamaki.celestia.counterpoint.software<br>
+https://rpc-mocha.pops.one<br>
+https://api-mocha.pops.one<br>
+https://grpc-mocha.pops.one<br>
